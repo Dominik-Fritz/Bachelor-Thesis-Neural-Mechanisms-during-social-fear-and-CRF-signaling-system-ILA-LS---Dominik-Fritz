@@ -18,9 +18,6 @@ Scripts used for statistical analyses.
 data_processing/  
 Scripts for preprocessing and preparation of behavioral and imaging data.
 
-figure_generation/  
-Scripts used to generate figures included in the manuscript.
-
 schematic_figures/  
 Scripts used to generate schematic illustrations of the experimental design and neural circuitry.
 
