@@ -15,10 +15,10 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # ============================================================
 
 GEOJSON_DIR = "geojson"
-OUTPUT_DIR = "evaluation_output_LS"
+OUTPUT_DIR = "evaluation_output_ILA"
 IOU_THRESHOLD = 0.5
 
-CLASSIFIERS = ["CRFR1", "cfos", "CRFR2"]
+CLASSIFIERS = ["CRF", "cfos"]
 
 CSV_DIR = os.path.join(OUTPUT_DIR, "csv")
 PLOT_DIR = os.path.join(OUTPUT_DIR, "plots")
@@ -493,7 +493,6 @@ def plot_f1_per_classifier_separate(df):
             os.path.join(PUBLICATION_DIR, f"f1_per_image_{clf}")
         )
 
-
 def plot_precision_recall_scatter(df):
     fig, ax = plt.subplots(figsize=(6.2, 5.6))
 
@@ -660,8 +659,8 @@ def main():
 
     plot_metric_lines(df)
     plot_grouped_metrics_by_classifier(df)
-    plot_tp_fp_fn_by_classifier(df)
     plot_f1_per_classifier_separate(df)
+    plot_tp_fp_fn_by_classifier(df)
     plot_precision_recall_scatter(df)
     plot_iou_distribution(df_matches)
 
