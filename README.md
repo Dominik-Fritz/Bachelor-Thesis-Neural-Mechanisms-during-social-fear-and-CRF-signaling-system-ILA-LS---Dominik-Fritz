@@ -24,6 +24,9 @@ Scripts for image quantification in qupath.
 schematic_figures/  
 Scripts used to generate schematic illustrations of the experimental design and neural circuitry.
 
+models/
+Used models for segmentation and classification.
+
 ---
 
 ## Reproducibility
