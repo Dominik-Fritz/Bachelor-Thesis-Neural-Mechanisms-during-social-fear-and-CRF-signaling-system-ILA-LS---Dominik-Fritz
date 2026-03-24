@@ -27,6 +27,9 @@ Scripts used to generate schematic illustrations of the experimental design and 
 models/
 Used models for segmentation and classification.
 
+image_prep/
+Used macros (ImageJ) for image preparation.
+
 ---
 
 ## Reproducibility
