@@ -1,0 +1,47 @@
+inputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/exported_LasX/";
+outputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/prepared/";
+
+File.makeDirectory(outputDir);
+list = getFileList(inputDir);
+
+setBatchMode(true);
+
+channels = newArray("DAPI", "CRF", "cFos");
+
+for (i = 0; i < list.length; i += 3) {
+    if (i + 2 >= list.length) break;
+
+    processed = newArray(3);
+
+    for (j = 0; j < 3; j++) {
+        path = inputDir + list[i + j];
+        open(path);
+        rename(channels[j]);
+
+        run("32-bit");
+
+        run("Z Project...", "projection=[Max Intensity]");
+        selectWindow("MAX_" + channels[j]);
+        close(channels[j]);
+        rename(channels[j]);
+
+        run("Enhance Contrast...", "saturated=0.35 normalize");
+
+        run("8-bit");
+
+        processed[j] = getTitle();
+    }
+
+    selectWindow(processed[0]); run("Blue");
+    selectWindow(processed[1]); run("Red");
+    selectWindow(processed[2]); run("Green");
+
+    run("Merge Channels...", "c1=" + processed[0] + " c2=" + processed[1] + " c3=" + processed[2] + " create");
+
+    baseName = replace(list[i], "ch00.tif", "");
+    saveAs("Tiff", outputDir + baseName + "_merged.tif");
+
+    close("*");
+}
+
+setBatchMode(false);
