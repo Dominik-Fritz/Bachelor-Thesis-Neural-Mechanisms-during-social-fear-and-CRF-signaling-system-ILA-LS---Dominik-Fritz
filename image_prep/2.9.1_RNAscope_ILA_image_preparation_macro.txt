@@ -1,5 +1,5 @@
-inputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/exported_LasX/";
-outputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/prepared/";
+inputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/exported_LasX/"; //Change pathway to Input directory
+outputDir = "G:/images_SFC_receptor_changes_28.04.25/ILA/prepared/"; //Change pathway to Output directory
 
 File.makeDirectory(outputDir);
 list = getFileList(inputDir);
