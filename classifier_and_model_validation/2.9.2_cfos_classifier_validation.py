@@ -1,3 +1,5 @@
+# 2.9.2_cfos_classifier_validation should be used after finishing Cellpose validation. Combined pipeline evaluation integrated.
+
 import os
 import re
 import glob
