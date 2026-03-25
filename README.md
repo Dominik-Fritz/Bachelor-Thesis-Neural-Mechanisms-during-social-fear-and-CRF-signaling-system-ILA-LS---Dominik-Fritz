@@ -2,7 +2,7 @@ Neural Mechanisms during Social Fear and CRF Signaling in the ILA–LS Circuit
 
 This repository contains all scripts used for data processing, analysis, and figure generation for the study:
 
-“Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping.”
+"Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping."
 
 The repository is organized to mirror the structure of the analyses presented in the manuscript in order to facilitate transparency, reproducibility, and reuse of the analysis pipeline.
 
@@ -32,7 +32,7 @@ Analysis Pipeline Overview
 
 The analysis pipeline implemented in this repository follows the workflow used in the manuscript.
 
-Image Preparation
+1. Image Preparation
 
 Raw microscopy images are first prepared using ImageJ macros contained in the image_prep/ directory.
 
@@ -45,7 +45,7 @@ format conversion for downstream analysis
 
 These steps standardize image input for segmentation and classification.
 
-Nuclei Segmentation
+2. Nuclei Segmentation
 
 Segmentation of cell nuclei is performed using the trained models provided in the models/ directory.
 
@@ -53,7 +53,7 @@ The segmentation models were trained using Cellpose and applied to detect nuclei
 
 Segmentation produces object masks that are subsequently used for downstream classification and quantification.
 
-Cell Classification
+3. Cell Classification
 
 Following segmentation, detected nuclei are classified using trained classifiers implemented in QuPath.
 
@@ -63,7 +63,7 @@ qupath_scripts/
 
 These classifiers distinguish signal-positive cells from background based on morphological and fluorescence features.
 
-Model and Classifier Validation
+4. Model and Classifier Validation
 
 Validation of segmentation models and classification pipelines is performed using scripts contained in:
 
@@ -77,7 +77,7 @@ F1 score
 
 Validation ensures robust detection and classification performance across images.
 
-Statistical Analysis
+5. Statistical Analysis
 
 Statistical analyses are performed using Python scripts located in:
 
@@ -90,7 +90,7 @@ Typical analyses include:
 group comparisons
 summary statistics
 dataset preprocessing
-Image Quantification and Figure Generation
+6. Image Quantification and Figure Generation
 
 Final quantification of detected signals and generation of schematic figures are performed using scripts located in:
 
@@ -103,7 +103,7 @@ Reproducibility
 
 All scripts required to reproduce the analyses and figures reported in the manuscript are provided in this repository.
 
-The folder structure reflects the organization of the analyses described in the manuscript to allow straightforward navigation of the workflow.
+The folder structure reflects the organization of the analyses described in the manuscript and allows straightforward navigation of the workflow.
 
 Each script contains comments describing its purpose and expected input format.
 
@@ -159,7 +159,6 @@ Run classification using scripts in qupath_scripts/
 Validate models using scripts in classifier_and_model_validation/
 Perform statistical analyses using scripts in statistical_analysis/
 Generate schematic figures using scripts in schematic_figures/
-
 Code Availability
 
 All scripts used for data processing, analysis, and figure generation are publicly available in this repository.
@@ -178,7 +177,7 @@ Citation
 
 If you use the scripts or models provided in this repository, please cite the associated study:
 
-Fritz, Dominik.
+Fritz, Dominik
 Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping.
 
 Contact
