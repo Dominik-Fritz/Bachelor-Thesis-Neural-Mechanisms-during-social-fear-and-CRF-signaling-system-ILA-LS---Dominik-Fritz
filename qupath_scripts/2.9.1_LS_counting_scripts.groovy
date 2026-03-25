@@ -7,7 +7,7 @@ import qupath.lib.scripting.QP
 def atlasName = "Adult Mouse Brain - Allen Brain Atlas V3p1"
 def regionNames = ["LSr", "LSc", "LSv"]
 
-def modelPath = "I:/counting/stardist_counting_and_imagej_files/model.pb" //Change Pathway to StarDist file
+def modelPath = "I:/counting/stardist_counting_and_imagej_files/model.pb" //Change Pathway to StarDist model file
 
 def crfr1Classifier = "crfr1"
 def cfosClassifier  = "cfos"
