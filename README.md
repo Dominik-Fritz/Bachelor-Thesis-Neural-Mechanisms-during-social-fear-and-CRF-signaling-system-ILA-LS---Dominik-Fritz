@@ -1,122 +1,105 @@
+
 # Neural Mechanisms during Social Fear and CRF Signaling in the ILA–LS Circuit
 
 This repository contains all scripts used for data processing, analysis, and figure generation for the study:
 
-**"Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping."**
+"Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping."
 
-The repository is organized to mirror the structure of the analyses presented in the manuscript in order to facilitate **transparency**, **reproducibility**, and **reuse of the analysis pipeline**.
+The repository is organized to mirror the structure of the analyses presented in the manuscript in order to facilitate transparency, reproducibility, and reuse of the analysis pipeline.
 
 ---
 
-## Repository Structure
+Repository Structure
 
-The scripts are organized according to the analyses described in the manuscript.
-
-**classifier_and_model_validation/**  
+classifier_and_model_validation/
 Scripts used for validation of segmentation models and classifiers.
 
-**image_prep/**  
+image_prep/
 ImageJ macros used for preprocessing of microscopy images.
 
-**models/**  
-Trained models used for segmentation and classification.
+models/
+Pre-trained models used for nucleus segmentation and classification.
 
-**qupath_scripts/**  
-Scripts used for automated image quantification within QuPath.
+qupath_scripts/
+Scripts used for automated image analysis and signal quantification within QuPath.
 
-**statistical_analysis/**  
-Scripts used for statistical analysis of behavioral and histological data.
+statistical_analysis/
+Python scripts used for statistical analysis of the c-Fos whole-brain mapping dataset.
 
-**schematic_figures/**  
-Scripts used to generate schematic illustrations of the experimental design and neural circuitry presented in the manuscript.
+schematic_figures/
+Scripts used to generate schematic illustrations explaining experimental design and figure generation workflows.
 
 ---
 
-## Analysis Pipeline Overview
+Analysis Pipeline Overview
 
 The analysis pipeline implemented in this repository follows the workflow used in the manuscript.
 
-### 1. Image Preparation
+1. Image Preparation
 
-Raw microscopy images are first prepared using ImageJ macros contained in the **image_prep/** directory.
+Raw microscopy images are first prepared using ImageJ macros contained in the image_prep/ directory.
 
 Typical preprocessing steps include:
+- channel separation
+- Z-projection of image stacks
+- contrast normalization
+- format conversion for downstream analysis
 
-- channel separation  
-- Z-projection of image stacks  
-- contrast normalization  
-- format conversion for downstream analysis  
+These steps standardize image input for segmentation and downstream analysis.
 
-These steps standardize image input for segmentation and classification.
+2. Model Preparation
 
----
+Segmentation and classification models used in the analysis are stored in the models/ directory.
 
-### 2. Nuclei Segmentation
+Two different segmentation approaches were used depending on the dataset:
 
-Segmentation of cell nuclei is performed using the trained models provided in the **models/** directory.
+StarDist – used for segmentation of nuclei in RNAscope datasets
+Cellpose – used for segmentation of nuclei in c-Fos whole-brain mapping datasets
 
-The segmentation models were trained using **Cellpose** and applied to detect nuclei across whole-brain sections and RNAscope images.
+The prepared models are loaded and applied within QuPath using the scripts provided in the repository.
 
-Segmentation produces object masks that are subsequently used for downstream classification and quantification.
+3. Image Analysis in QuPath
 
----
+Image analysis is performed using scripts located in:
 
-### 3. Cell Classification
+qupath_scripts/
 
-Following segmentation, detected nuclei are classified using trained classifiers implemented in **QuPath**.
+These scripts apply the trained segmentation models within QuPath and perform automated object detection and classification.
 
-Classifier scripts and workflows are located in:
+Detected objects are quantified and exported as CSV files containing raw measurement data, which serve as the basis for downstream analyses.
 
-**qupath_scripts/**
-
-These classifiers distinguish signal-positive cells from background based on morphological and fluorescence features.
-
----
-
-### 4. Model and Classifier Validation
+4. Model and Classifier Validation
 
 Validation of segmentation models and classification pipelines is performed using scripts contained in:
 
-**classifier_and_model_validation/**
+classifier_and_model_validation/
 
 These scripts compute evaluation metrics including:
+- precision
+- recall
+- F1 score
 
-- precision  
-- recall  
-- F1 score  
+Validation ensures robust segmentation and classification performance across datasets.
 
-Validation ensures robust detection and classification performance across images.
-
----
-
-### 5. Statistical Analysis
+5. Statistical Analysis
 
 Statistical analyses are performed using Python scripts located in:
 
-**statistical_analysis/**
+statistical_analysis/
 
-These scripts implement statistical testing and data aggregation used to generate the quantitative results presented in the manuscript.
+These scripts are used specifically for the c-Fos whole-brain mapping dataset, where regional activity values are aggregated and statistical comparisons between experimental groups are performed.
 
-Typical analyses include:
+6. Figure Generation and Schematics
 
-- group comparisons  
-- summary statistics  
-- dataset preprocessing  
+Scripts used to generate schematic illustrations explaining experimental workflows and neural circuitry are located in:
 
----
+schematic_figures/
 
-### 6. Image Quantification and Figure Generation
-
-Final quantification of detected signals and generation of schematic figures are performed using scripts located in:
-
-**qupath_scripts/**  
-**schematic_figures/**
-
-These scripts produce the quantitative outputs and schematic illustrations used in the manuscript.
+These scripts reproduce schematic figures used in the manuscript and document how the visualizations were generated.
 
 ---
 
-## Reproducibility
+Reproducibility
 
 All scripts required to reproduce the analyses and figures reported in the manuscript are provided in this repository.
 
@@ -126,76 +109,76 @@ Each script contains comments describing its purpose and expected input format.
 
 ---
 
-## Data Organization
+Data Organization
 
 The analyses in this repository are based on processed datasets derived from histological imaging and behavioral experiments described in the manuscript.
 
-Due to file size limitations and institutional data policies, **raw microscopy images and full intermediate datasets are not included in this repository**.
+Due to file size limitations and institutional data policies, raw microscopy images and full intermediate datasets are not included in this repository.
 
 Instead, the repository contains:
-
-- analysis scripts used for processing and statistical analysis  
-- trained segmentation and classification models  
-- example data structures illustrating the format expected by the analysis scripts  
-- scripts used for generating figures included in the manuscript  
+- analysis scripts used for processing and statistical analysis
+- trained segmentation and classification models
+- example data structures illustrating the format expected by the analysis scripts
+- scripts used for generating figures included in the manuscript
 
 Users wishing to reproduce the analysis pipeline should adapt the input paths within the scripts to match their own local data structure.
 
 ---
 
-## External Software
+External Software
 
 The analysis pipeline relies on several external software tools commonly used in histological image analysis:
 
-- **QuPath** – digital pathology and automated image quantification  
-- **ImageJ / Fiji + ABBA** – image preprocessing and macro-based processing  
-- **Cellpose** – deep learning–based cell segmentation  
-- **Python** – statistical analysis and figure generation  
+QuPath – digital pathology and automated image quantification
+ImageJ / Fiji + ABBA – image preprocessing and macro-based processing
+Cellpose – deep learning–based cell segmentation (c-Fos datasets)
+StarDist – nucleus segmentation for RNAscope datasets
+Python – statistical analysis and figure generation
 
 Users reproducing the pipeline should ensure that compatible versions of these tools are installed.
 
 ---
 
-## Requirements
+Requirements
 
-The analyses were performed using **Python 3.11**.
+The analyses were performed using Python 3.11 (except Cellpose, which was run using Python 3.8).
 
 Required Python packages may include:
-
-- numpy  
-- pandas  
-- matplotlib  
-- scipy  
-- seaborn  
+- numpy
+- pandas
+- matplotlib
+- scipy
+- seaborn
 
 Additional dependencies are specified within the individual scripts.
 
 ---
 
-## Usage
+Usage
 
 Scripts can be executed individually depending on the analysis step.
 
 Typical usage follows the pipeline described above:
 
-1. Prepare images using macros in **image_prep/**  
-2. Perform segmentation using models in **models/**  
-3. Run classification using scripts in **qupath_scripts/**  
-4. Validate models using scripts in **classifier_and_model_validation/**  
-5. Perform statistical analyses using scripts in **statistical_analysis/**  
-6. Generate schematic figures using scripts in **schematic_figures/**  
+1. Prepare microscopy images using macros in image_prep/
+2. Load trained segmentation models from models/
+3. Apply segmentation and classification using qupath_scripts/
+4. Export quantified measurements as CSV files
+5. Validate models using classifier_and_model_validation/
+6. Perform statistical analyses using statistical_analysis/
+7. Generate schematic figures using schematic_figures/
 
 ---
 
-## Code Availability
+Code Availability
 
 All scripts used for data processing, analysis, and figure generation are publicly available in this repository.
 
-The repository is intended to provide full **transparency for the analysis pipeline** used in the study and to facilitate **reproducibility of the reported results**.
+The repository is intended to provide full transparency for the analysis pipeline used in the study and to facilitate reproducibility of the reported results.
 
 ---
 
-## Data Availability
+Data Availability
 
 Due to the size of the raw microscopy datasets, raw images are not included in this repository.
 
@@ -205,16 +188,16 @@ Additional data may be made available upon reasonable request.
 
 ---
 
-## Citation
+Citation
 
 If you use the scripts or models provided in this repository, please cite the associated study:
 
-**Fritz, Dominik**  
+Fritz, Dominik
 Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping.
 
 ---
 
-## Contact
+Contact
 
 For questions regarding the code or analyses, please contact:
 
