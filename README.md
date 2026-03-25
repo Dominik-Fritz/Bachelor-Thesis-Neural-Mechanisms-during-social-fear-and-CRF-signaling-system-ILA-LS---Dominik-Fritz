@@ -35,7 +35,7 @@ Analysis Pipeline Overview
 
 The analysis pipeline implemented in this repository follows the workflow used in the manuscript.
 
-1. Image Preparation
+# 1. Image Preparation
 
 Raw microscopy images are first prepared using ImageJ macros contained in the image_prep/ directory.
 
@@ -47,7 +47,7 @@ Typical preprocessing steps include:
 
 These steps standardize image input for segmentation and downstream analysis.
 
-2. Model Preparation
+# 2. Model Preparation
 
 Segmentation and classification models used in the analysis are stored in the models/ directory.
 
@@ -58,7 +58,7 @@ Cellpose – used for segmentation of nuclei in c-Fos whole-brain mapping datase
 
 The prepared models are loaded and applied within QuPath using the scripts provided in the repository.
 
-3. Image Analysis in QuPath
+# 3. Image Analysis in QuPath
 
 Image analysis is performed using scripts located in:
 
@@ -68,7 +68,7 @@ These scripts apply the trained segmentation models within QuPath and perform au
 
 Detected objects are quantified and exported as CSV files containing raw measurement data, which serve as the basis for downstream analyses.
 
-4. Model and Classifier Validation
+# 4. Model and Classifier Validation
 
 Validation of segmentation models and classification pipelines is performed using scripts contained in:
 
@@ -81,7 +81,7 @@ These scripts compute evaluation metrics including:
 
 Validation ensures robust segmentation and classification performance across datasets.
 
-5. Statistical Analysis
+# 5. Statistical Analysis
 
 Statistical analyses are performed using Python scripts located in:
 
@@ -89,7 +89,7 @@ statistical_analysis/
 
 These scripts are used specifically for the c-Fos whole-brain mapping dataset, where regional activity values are aggregated and statistical comparisons between experimental groups are performed.
 
-6. Figure Generation and Schematics
+# 6. Figure Generation and Schematics
 
 Scripts used to generate schematic illustrations explaining experimental workflows and neural circuitry are located in:
 
