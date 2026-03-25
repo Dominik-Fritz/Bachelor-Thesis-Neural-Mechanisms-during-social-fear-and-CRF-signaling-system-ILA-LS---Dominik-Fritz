@@ -15,20 +15,20 @@ The scripts are organized according to the analyses described in the manuscript.
 **classifier_and_model_validation/**  
 Scripts used for validation of segmentation models and classifiers.
 
-**statistical_analysis/**  
-Scripts used for statistical analysis of behavioral and histological data.
-
-**qupath_scripts/**  
-Scripts used for automated image quantification within QuPath.
-
-**schematic_figures/**  
-Scripts used to generate schematic illustrations of the experimental design and neural circuitry presented in the manuscript.
+**image_prep/**  
+ImageJ macros used for preprocessing of microscopy images.
 
 **models/**  
 Trained models used for segmentation and classification.
 
-**image_prep/**  
-ImageJ macros used for preprocessing of microscopy images.
+**qupath_scripts/**  
+Scripts used for automated image quantification within QuPath.
+
+**statistical_analysis/**  
+Scripts used for statistical analysis of behavioral and histological data.
+
+**schematic_figures/**  
+Scripts used to generate schematic illustrations of the experimental design and neural circuitry presented in the manuscript.
 
 ---
 
