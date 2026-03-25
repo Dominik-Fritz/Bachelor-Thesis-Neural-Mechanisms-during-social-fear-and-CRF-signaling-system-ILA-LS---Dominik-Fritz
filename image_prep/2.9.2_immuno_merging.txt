@@ -1,5 +1,5 @@
-inputDir = "/G:/cfos_brain_mapping_AA_26.06.2025/first_series/merge/";
-outputDir = "/G:/cfos_brain_mapping_AA_26.06.2025/first_series/prepared_tiff/";
+inputDir = "/G:/cfos_brain_mapping_AA_26.06.2025/first_series/merge/"; //Change Pathway to Input directory
+outputDir = "/G:/cfos_brain_mapping_AA_26.06.2025/first_series/prepared_tiff/"; //Change Pathway to Output directory
 
 getDateAndTime(year, month, dayOfWeek, dayOfMonth, hour, minute, second, msec);
 print("=== Batch Start ===");
