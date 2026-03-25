@@ -54,6 +54,7 @@ Segmentation and classification models used in the analysis are stored in the mo
 Two different segmentation approaches were used depending on the dataset:
 
 StarDist – used for segmentation of nuclei in RNAscope datasets
+
 Cellpose – used for segmentation of nuclei in c-Fos whole-brain mapping datasets
 
 The prepared models are loaded and applied within QuPath using the scripts provided in the repository.
@@ -75,8 +76,11 @@ Validation of segmentation models and classification pipelines is performed usin
 classifier_and_model_validation/
 
 These scripts compute evaluation metrics including:
+
 - precision
+  
 - recall
+  
 - F1 score
 
 Validation ensures robust segmentation and classification performance across datasets.
