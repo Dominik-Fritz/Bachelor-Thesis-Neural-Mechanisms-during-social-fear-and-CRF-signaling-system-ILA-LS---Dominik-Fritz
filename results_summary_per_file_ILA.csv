@@ -1,0 +1,28 @@
+source_prefix;image;classifier;gt_file;pred_file;tp;fp;fn;precision;recall;f1;
+ILA-m12-2;Image 1;CRF;ILA-m12-2_CRF_GT.geojson;ILA-m12-2_CRF_Pred.geojson;121;2;3;0,983739837;0,975806452;0,979757085;
+ILA-m12-2;Image 1;cfos;ILA-m12-2_cfos_GT.geojson;ILA-m12-2_cfos_Pred.geojson;526;5;11;0,990583804;0,979515829;0,985018727;
+ILA-m13-4;Image 2;CRF;ILA-m13-4_CRF_GT.geojson;ILA-m13-4_CRF_Pred.geojson;85;1;2;0,988372093;0,977011494;0,98265896;
+ILA-m13-4;Image 2;cfos;ILA-m13-4_cfos_GT.geojson;ILA-m13-4_cfos_Pred.geojson;377;3;15;0,992105263;0,961734694;0,976683938;
+ILA-m7-2;Image 3;CRF;ILA-m7-2_CRF_GT.geojson;ILA-m7-2_CRF_Pred.geojson;61;0;3;1;0,953125;0,976;
+ILA-m7-2;Image 3;cfos;ILA-m7-2_cfos_GT.geojson;ILA-m7-2_cfos_Pred.geojson;427;5;7;0,988425926;0,983870968;0,986143187;
+ILA-m9-1;Image 4;CRF;ILA-m9-1_CRF_GT.geojson;ILA-m9-1_CRF_Pred.geojson;138;2;5;0,985714286;0,965034965;0,975265018;
+ILA-m9-1;Image 4;cfos;ILA-m9-1_cfos_GT.geojson;ILA-m9-1_cfos_Pred.geojson;699;7;9;0,990084986;0,987288136;0,988684583;
+-;-;-;-;-;-;-;-;-;-;-;
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+source_prefix;image;classifier;gt_file;pred_file;tp;fp;fn;precision;recall;f1;
+ILA-m12-2;Image 1;CRF;ILA-m12-2_CRF_GT.geojson;ILA-m12-2_CRF_Pred.geojson;121;2;3;0,983739837;0,975806452;0,979757085;
+ILA-m13-4;Image 2;CRF;ILA-m13-4_CRF_GT.geojson;ILA-m13-4_CRF_Pred.geojson;85;1;2;0,988372093;0,977011494;0,98265896;
+ILA-m7-2;Image 3;CRF;ILA-m7-2_CRF_GT.geojson;ILA-m7-2_CRF_Pred.geojson;61;0;3;1;0,953125;0,976;
+ILA-m9-1;Image 4;CRF;ILA-m9-1_CRF_GT.geojson;ILA-m9-1_CRF_Pred.geojson;138;2;5;0,985714286;0,965034965;0,975265018;
+-;-;-;-;-;101,25;1,25;3,25;98,9456554;96,77444777;97,84202656;%
+;;;;;;;;;;;
+;;;;;;;;;;;
+;;;;;;;;;;;
+source_prefix;image;classifier;gt_file;pred_file;tp;fp;fn;precision;recall;f1;
+ILA-m12-2;Image 1;cfos;ILA-m12-2_cfos_GT.geojson;ILA-m12-2_cfos_Pred.geojson;526;5;11;0,990583804;0,979515829;0,985018727;
+ILA-m13-4;Image 2;cfos;ILA-m13-4_cfos_GT.geojson;ILA-m13-4_cfos_Pred.geojson;377;3;15;0,992105263;0,961734694;0,976683938;
+ILA-m7-2;Image 3;cfos;ILA-m7-2_cfos_GT.geojson;ILA-m7-2_cfos_Pred.geojson;427;5;7;0,988425926;0,983870968;0,986143187;
+ILA-m9-1;Image 4;cfos;ILA-m9-1_cfos_GT.geojson;ILA-m9-1_cfos_Pred.geojson;699;7;9;0,990084986;0,987288136;0,988684583;
+-;-;-;-;-;507,25;5;10,5;99,02999948;97,81024065;98,41326086;%
