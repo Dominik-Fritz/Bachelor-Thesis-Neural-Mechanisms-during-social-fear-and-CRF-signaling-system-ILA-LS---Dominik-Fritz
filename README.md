@@ -210,7 +210,7 @@ Additional data may be made available upon reasonable request.
 
 If you use the scripts or models provided in this repository, please cite the associated study:
 
-Fritz, Dominik; 2026; Bachelor Thesis; Neural Mechanisms of Social Fear Extinction in Mice: Role of Lateral Septal CRF Signaling and State-Dependent c-Fos Brain Mapping.
+Fritz, Dominik (2026). *Bachelor Thesis: Neural Mechanisms of Social Fear Extinction in Mice*.
 
 ---
 
